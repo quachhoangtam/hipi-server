@@ -1,0 +1,14 @@
+{
+	"name" : "HiPi",
+	"version" : "0.0.1",
+	"private" : "true",
+	"dependencies" : {
+		"express" : "*",
+		"socket.io" : "*",
+		"socketio-file-upload": "^0.4.4"
+	},
+	"scripts": {
+		"start": "node app.js"
+	},
+	"main": "app.js"
+}
