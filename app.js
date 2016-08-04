@@ -18,8 +18,8 @@ io.sockets.on('connection', function(socket){
 	console.log("USER CONNECT");
 	socket.on('client-send-username',function(data){
 		console.log('CLIENT REGISTER USERNAME = '+ data );	
-		listusername.push(data);
-		socket.key = data;
+		//listusername.push(data);
+		//socket.key = data;
 		socket.emit('serverguitinnhan', { noidung: data });
 	});
 });
