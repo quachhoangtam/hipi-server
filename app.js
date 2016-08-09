@@ -31,6 +31,7 @@ connection.query('SELECT * FROM zon_user',
 );
 connection.end();
 
+
 io.sockets.on('connection', function(socket){
 	console.log("USER CONNECT");
 	socket.on('client-send-username',function(data){
