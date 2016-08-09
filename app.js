@@ -23,15 +23,13 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-connection.query('SELECT * FROM zon_user',
+connection.query('SELECT * FROM zone_user',
 	function(err, rows, fields){
 		if(err) throw err;
 		console.log('The solution is:',rows);
 	}
 );
 connection.end();
-
-
 
 io.sockets.on('connection', function(socket){
 	console.log("USER CONNECT");
