@@ -4,7 +4,7 @@ var server = require("http").createServer(app);
 var io = require("socket.io").listen(server);
 var fs = require("fs");
 var listusername;
-var mysql=require("mysql");
+var mysql = require("mysql");
 
 server.listen(process.env.PORT || 3000);
 
@@ -14,7 +14,7 @@ app.get("/", function(req, res){
 	res.sendFile(__dirname + "/index.html");
 });
 
-var connection = mysql.createConnection({
+var con = mysql.createConnection({
 	host	: '103.7.41.145',
 	user 	: 'zonedes_hipi',
 	password: '6g4pQtIW',
@@ -22,14 +22,14 @@ var connection = mysql.createConnection({
 	port	: 3306
 });
 
-connection.connect();
-connection.query('SELECT * FROM zone_user',
-	function(err, rows, fields){
+con.connect();
+con.query('SELECT * FROM zone_user',
+	function(err, rows){
 		if(err) throw err;
-		console.log('The solution is:',rows);
+		console.log('The solution is:' + rows);
 	}
 );
-connection.end();
+con.end();
 
 io.sockets.on('connection', function(socket){
 	console.log("USER CONNECT");
