@@ -15,10 +15,10 @@ app.get("/", function(req, res){
 });
 
 var con = mysql.createConnection({
-	host	: '103.7.41.145',
-	user 	: 'zonedes_hipi',
-	password: '6g4pQtIW',
-	database: 'zonedes_hipidb',
+	host	: '',
+	user 	: '',
+	password: '',
+	database: '',
 	port	: 3306
 });
 
